@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns="https://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
+
+<head th:replace="fragments :: head('Error - Parroquia Sagrado Corazón')" />
+
+<body>
+
+<div th:replace="navegacion :: menu"></div>	
+
+	<div class="container-fluid m-5">
+		
+		<h2> Lo sentimos, no tienes permiso para acceder a esta página </h2>
+		
+	</div>
+
+	<div th:replace="fragments :: footer"></div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#logoutLink").on("click", function(e) {
+				e.preventDefault();
+				document.logoutForm.submit();
+			});
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns="https://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
+
+<head th:replace="fragments :: head('Home - Parroquia Sagrado Corazón')" />
+
+
+<body>
+
+<div th:replace="navegacion :: menu"></div>	
+
+	<div class="container-fluid">
+		<h2>Bienvenidos a la parroquia Sagrado Corazón de Jesús</h2>
+	</div>
+	
+	<span sec:authentication="principal.authorities"></span>
+
+	<div th:replace="fragments :: footer"></div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#logoutLink").on("click", function(e) {
+				e.preventDefault();
+				document.logoutForm.submit();
+			});
+		});
+	</script>
+
+</body>
+</html>
